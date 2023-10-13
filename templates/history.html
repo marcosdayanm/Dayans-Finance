@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <h1>History of Transactions</h1>
+    <br><br>
+
+    <div  class="bsection">
+
+        <table class="table-blue">
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ticker</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Hour</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for h in hist %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ h["ticker"] }}</td>
+                    <td>
+                        {% if h["type"] == 0 %}
+                            Buy
+                        {% elif h["type"] == 1 %}
+                            Sell
+                        {% endif %}
+                    </td>
+                    <td>{{ h["amount"] }}</td>
+                    <td>{{ h["date"] }}</td>
+                    <td>{{ h["hour"] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+{% endblock %}

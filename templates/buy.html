@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+
+    <h1>Buy a Stock</h1>
+    <br><br>
+
+    <form action="/buy" method="post">
+        <div class="mb-3">
+            <p>Type the Stock Ticker you would like to buy and the amount of stocks to look for its data</p>
+            <p>Ex: AAPL for Apple</p>
+            <br>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="ticker" name="ticker" placeholder="Ticker" type="text">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="amount" name="amount" placeholder="Amount" type="text">
+        </div>
+
+        {% if nf%}
+        <p class="text-red">{{ nf }}</p>
+        {% endif %}
+        <button class="btn btn-primary" name="accion" value="search" type="submit">Search</button>
+    </form>
+
+
+    <div  class="bsection">
+
+        {% if tick %}
+
+        <br><br><br><br>
+
+        <h3>Order Summary</h3>
+
+        <br>
+
+        <table class="table-green">
+            <thead>
+                <th>Ticker</th>
+                <th>Amount</th>
+                <th>Unit Price</th>
+                <th>Total</th>
+                <th>Your Balance</th>
+                <th>Future Balance</th>
+            </thead>
+            <tbody>
+                <td>{{ tick }}</td>
+                <td>{{ amount }}</td>
+                <td>{{ price }}</td>
+                <td>{{ total }}</td>
+                <td>{{ balance }}</td>
+                <td>{{ future }}</td>
+            </tbody>
+        </table>
+
+        <form action="/buy" method="post">
+            <button class="btn btn-primary" id="buy" name="accion" value="buy" type="submit" onclick="buyAlert()">Buy</button>
+            <button class="btn btn-primary" id="cancel" name="accion" value="cancel" type="submit" onclick="cancelAlert()">Cancel</button>
+        </form>
+
+        {% endif %}
+
+    </div>
+
+
+
+{% endblock %}

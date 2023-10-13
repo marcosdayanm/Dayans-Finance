@@ -1,0 +1,86 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+table {
+    background-color: transparent;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+table th,
+table td {
+    padding: 0.75rem;
+    vertical-align: middle;
+}
+
+/*Éste es el original que venpia de las filas de las tablas*/
+/*
+tbody tr:nth-of-type(odd) {
+    background-color: rgba(174, 255, 160, 0.487)
+}
+*/
+
+.table-green tbody tr:nth-of-type(odd) {
+    background-color: rgba(174, 255, 160, 0.487)
+}
+
+.table-red tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 160, 160, 0.487)
+}
+
+.table-blue tbody tr:nth-of-type(odd) {
+    background-color: rgba(160, 187, 255, 0.487)
+}
+
+.table-yellow tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 249, 160, 0.487)
+}
+
+
+
+.section {
+    padding-bottom: 1rem;
+    padding-left: 30rem;
+    padding-right: 30rem;
+    padding-top: 0.5rem;
+}
+
+.bsection {
+    padding-bottom: 1rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
+    padding-top: 0.5rem;
+}
+
+.section:hover {
+    background-color: #f5f5f5;
+    transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+
+.text-red {
+    color: red;
+}
+
+

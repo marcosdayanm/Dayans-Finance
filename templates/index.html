@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+    <h1>Welcome to your Portfolio of Stocks!</h1>
+    <br><br>
+
+    <div  class="bsection">
+
+        <table class="table-yellow">
+
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Total Stock Value</th>
+                    <th>Total Stocks Number</th>
+                    <th>Total Cash Money</th>
+                    <th>Total Portfolio Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ session["username"] }}</td>
+                    <td>{{ tot_invested }}</td>
+                    <td>{{ tot_stocks }}</td>
+                    <td>{{ cash }}</td>
+                    <td>{{ tot_port }}</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <br><br>
+
+        <table class="table-yellow">
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ticker</th>
+                    <th>Stocks Number</th>
+                    <th>Value of Investment per Stock</th>             
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in stcks %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ s["ticker"] }}</td>
+                    <td>{{ s["quantity"] }}</td>
+                    <td>{{ tot_inv_ps[loop.index0] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+{% endblock %}

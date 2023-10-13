@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+    <h1>Look for a Stock by its Ticker Symbol</h1>
+    <br><br>
+
+    <form action="/quote" method="post">
+        <div class="mb-3">
+            <p>Type a Stock Quote or Ticker to look for its data</p>
+            <p>Ex: AAPL for Apple</p>
+            <br>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="ticker" name="ticker" placeholder="Ticker" type="text">
+        </div>
+
+        {% if nf%}
+        <p class="text-red">{{ nf }}</p>
+        {% endif %}
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    <div  class="section">
+
+        {% if tick %}
+
+        <br>
+
+        <table class="table-blue">
+            <thead>
+                <th>Ticker</th>
+                <th>Price</th>
+            </thead>
+            <tbody>
+                <td>{{ tick }}</td>
+                <td>{{ price }}</td>
+            </tbody>
+        </table>
+
+        {% endif %}
+
+    </div>
+
+
+{% endblock %}
